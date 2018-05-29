@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="pricelist_extended_fields_view" model="ir.ui.view">
+			<field name="name">Pricelist</field>
+			<field name="model">product.pricelist</field>
+			<field name="inherit_id" ref="product.product_pricelist_view_tree" />
+			<field name="arch" type="xml">
+				<data>
+					<field name="type" position="after">
+						<field name="amount_assigns"/>
+					</field>
+				</data>
+			</field>
+		</record>
+	</data>
+</openerp>
+                
