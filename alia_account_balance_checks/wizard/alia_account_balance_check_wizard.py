@@ -65,7 +65,7 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
     
     init_date = fields.Date('Init date')
     end_date = fields.Date('End date')
-    draft_omit = fields.Boolean('Omit Drafts',default=True)
+    draft_omit = fields.Boolean('Omit Drafts',default=False)
     special_account_move_omit = fields.Boolean('Omit Special Account Moves (Opening, Closing)',default=True)
     show_accounts_with_differences = fields.Boolean('Show Only Accounts with differences',default=True)
     number_account_move_filtered = fields.Integer('Number of account move filtered')
@@ -133,7 +133,7 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
             balance_check_vals['account_balance_difference'] = abs( balance_check_vals['account_balance_by_account_move_filter'] - balance_check_vals['account_balance_by_account_move_line_filter'])  
             
             if self.show_accounts_with_differences:
-               if balance_check_vals['account_balance_difference'] == 0:
+               if balance_check_vals['account_balance_difference'] < 0.01:
                    continue                
             self.write({'results':[(0,0,balance_check_vals)]})
         
