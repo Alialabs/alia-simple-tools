@@ -36,6 +36,11 @@
     		<field name="type">form</field>
     		<field name="arch" type="xml">
       			<form string="Account balance check results">
+      			     <group>
+      			     	<field name="number_account_move_filtered" readonly="True"/>
+          				<field name="number_aml_account_move_filter" readonly="True"/>
+          				<field name="number_aml_account_move_line_filter" readonly="True"/>                
+          			</group>
       				<group>
           				<field name="results" widget="one2many" height="450" nolabel="1">
           					<tree create="false" delete="false" editable="false" colors="red:account_balance_difference!=0">

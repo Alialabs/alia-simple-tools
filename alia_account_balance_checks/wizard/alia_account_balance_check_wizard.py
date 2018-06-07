@@ -68,11 +68,14 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
     draft_omit = fields.Boolean('Omit Drafts',default=True)
     special_account_move_omit = fields.Boolean('Omit Special Account Moves (Opening, Closing)',default=True)
     show_accounts_with_differences = fields.Boolean('Show Only Accounts with differences',default=True)
+    number_account_move_filtered = fields.Integer('Number of account move filtered')
+    number_aml_account_move_filter = fields.Integer('Number of account move lines using account move filter')
+    number_aml_account_move_line_filter = fields.Integer('Number of account move lines using account move line filter')
     results = fields.One2many('alia.account.check.result','wizard_check_id')
     
      
     @api.multi
-    @api.depends('init_date','end_date','draft_omit','results')
+    @api.depends('number_account_move_filtered','number_aml_account_move_filter','number_aml_account_move_line_filter','init_date','end_date','draft_omit','results')
     def check_accounts_balance(self):
         _logger.info("Check Account Balances...")
         model_obj = self.env['ir.model.data']
@@ -82,6 +85,8 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
         criteria = []
         results_am = {}
         results_aml = {}
+        self.number_aml_account_move_filter = 0
+        self.number_aml_account_move_line_filter = 0
         
         criteria.append(('date','>=',self.init_date))
         criteria.append(('date','<=',self.end_date))
@@ -95,18 +100,21 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
         account_moves = self.env['account.move'].search(criteria)
         account_move_lines = self.env['account.move.line'].search(criteria)
         
+        self.number_account_move_filtered = len(account_moves)
         for am in account_moves:
+            self.number_aml_account_move_filter = self.number_aml_account_move_filter + len(am.line_id)
             for aml in am.line_id:
                 if str(aml.account_id.code) in results_am.keys():
-                    results_am[str(aml.account_id.code)] = results_am[str(aml.account_id.code)] + aml.balance
+                    results_am[str(aml.account_id.code)] = results_am[str(aml.account_id.code)] + aml.debit - aml.credit
                 else:
-                    results_am[str(aml.account_id.code)] = aml.balance
-            
+                    results_am[str(aml.account_id.code)] = aml.debit - aml.credit
+        
+        self.number_aml_account_move_line_filter = len(account_move_lines)    
         for aml in account_move_lines:
             if str(aml.account_id.code) in results_aml.keys():
-                results_aml[str(aml.account_id.code)] = results_aml[str(aml.account_id.code)] + aml.balance
+                results_aml[str(aml.account_id.code)] = results_aml[str(aml.account_id.code)] + aml.debit - aml.credit
             else:
-                results_aml[str(aml.account_id.code)] = aml.balance
+                results_aml[str(aml.account_id.code)] = aml.debit - aml.credit
         
 
         balance_check_vals = {}  
