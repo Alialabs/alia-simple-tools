@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW -->
+		<record model="ir.ui.view" id="alia_account_balance_check_wizard_view">
+    		<field name="name">alia.account.balance.check.wizard.view</field>
+    		<field name="model">alia.account.balance.check.wizard</field>
+    		<field name="type">form</field>
+    		<field name="arch" type="xml">
+      			<form string="Account balance check wizard">
+      			    <label string="" colspan="4"/>
+                    <newline/>
+      				<group colspan="4">
+      					<separator string="Date filter" colspan="4"/>
+      					<field name="init_date" />
+      					<field name="end_date" />
+      				</group>
+      				<group colspan="4">
+      					<separator string="Filtering options" colspan="4"/>
+      					<field name="draft_omit" />
+      					<field name="special_account_move_omit" />
+      					<field name="show_accounts_with_differences" />
+      				</group>
+      				<newline/>  
+         			<group colspan="4">
+         				<button name="check_accounts_balance" string="Check Account Balance" type="object" />
+         			</group>
+      			</form>
+    		</field>
+   		</record>
+   		
+   		<record model="ir.ui.view" id="alia_account_balance_check_results_view">
+    		<field name="name">alia.account.balance.check.results.view</field>
+    		<field name="model">alia.account.balance.check.wizard</field>
+    		<field name="type">form</field>
+    		<field name="arch" type="xml">
+      			<form string="Account balance check results">
+      				<group>
+          				<field name="results" widget="one2many" height="450" nolabel="1">
+          					<tree create="false" delete="false" editable="false" colors="red:account_balance_difference!=0">
+          						<field name="account_code"></field>
+          						<field name="account_balance_by_account_move_filter"></field>
+          						<field name="account_balance_by_account_move_line_filter"></field>
+          						<field name="account_balance_difference"></field>
+          					</tree>
+          				</field>                
+          			</group>
+      			</form>
+    		</field>
+   		</record>		
+
+	</data>
+</openerp>

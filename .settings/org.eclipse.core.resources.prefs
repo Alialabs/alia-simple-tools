@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//alia_account_balance_checks/__init__.py=utf-8
+encoding//alia_account_balance_checks/__openerp__.py=utf-8
+encoding//alia_account_balance_checks/wizard/__init__.py=utf-8
+encoding//alia_account_balance_checks/wizard/alia_account_balance_check_wizard.py=utf-8
+encoding//alia_pricelist_ext_info/__init__.py=utf-8
+encoding//alia_pricelist_ext_info/__openerp__.py=utf-8
+encoding//alia_pricelist_ext_info/model/__init__.py=utf-8
+encoding//alia_pricelist_ext_info/model/alia_pricelist.py=utf-8
+encoding//alia_simple_tools_base/__init__.py=utf-8
+encoding//alia_simple_tools_base/__openerp__.py=utf-8

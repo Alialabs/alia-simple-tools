@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">	
+		
+	    <record model="ir.module.category" id="module_category_alia_simple_tools">
+            <field name="name">Alia Simple Tools</field>
+            <field name="description">Alia Simple Tools Utilities</field>
+            <field name="sequence">40</field>
+        </record>
+
+		<record id="alia_simple_tools_group" model="res.groups">
+			<field name="name">Alia Tools User</field>
+			<field name="category_id" ref="module_category_alia_simple_tools" />
+		</record>
+	</data>
+</openerp>
