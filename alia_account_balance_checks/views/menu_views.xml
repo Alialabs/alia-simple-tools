@@ -5,15 +5,13 @@
 		
 		<act_window
         id="action_alia_account_balance_check"
-        name="Accounting Wizard Checks"
+        name="Accounting Balance Checks"
         res_model="alia.account.balance.check.wizard"
         view_id="alia_account_balance_check_wizard_view"
         target="new"
         groups="base.group_system" />
 		
-		<menuitem id="alia_account_tools" parent="alia_simple_tools_base.menu_alia_simple_tools" name="Account Tools" groups="alia_simple_tools_base.alia_simple_tools_group" sequence="10" />
-			<menuitem id="alia_account_tools_balance_check" parent="alia_account_tools" name="Accounting Wizard Checks" groups="alia_simple_tools_base.alia_simple_tools_group" sequence="10" action="action_alia_account_balance_check"/>
+		<menuitem id="alia_account_tools_balance_check" parent="alia_simple_tools_base.menu_alia_account_tools" name="Accounting Balance Checks" groups="alia_simple_tools_base.alia_simple_tools_group" sequence="10" action="action_alia_account_balance_check"/>
 		
-	
 	</data>
 </openerp>

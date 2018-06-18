@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<menuitem id="menu_alia_simple_tools" name="Alia Simple Tools" groups="alia_simple_tools_group" sequence="10" />		
+		<menuitem id="menu_alia_simple_tools" name="Alia Simple Tools" groups="alia_simple_tools_group" sequence="10" />
+			<menuitem id="menu_alia_account_tools" parent="menu_alia_simple_tools" name="Account Tools" groups="alia_simple_tools_group" sequence="10" />		
 	</data>
 </openerp>

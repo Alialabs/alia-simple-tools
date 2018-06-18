@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- FORM VIEW -->
+		<record model="ir.ui.view" id="alia_account_move_check_wizard_view">
+    		<field name="name">alia.account.move.check.wizard.view</field>
+    		<field name="model">alia.account.move.check.wizard</field>
+    		<field name="type">form</field>
+    		<field name="arch" type="xml">
+      			<form string="Account balance check wizard">
+      			    <label string="" colspan="4"/>
+                    <newline/>
+      				<group colspan="4">
+      					<separator string="Date filter" colspan="4"/>
+      					<field name="init_date" />
+      					<field name="end_date" />
+      				</group>
+      				<group colspan="4">
+      					<separator string="Filtering options" colspan="4"/>
+      					<field name="draft_omit" />
+      					<field name="special_account_move_omit" />
+      				</group>
+      				<newline/>  
+         			<group colspan="4">
+         				<button name="check_account_move_periods" string="Check Account Move Periods" type="object" />
+         			</group>
+      			</form>
+    		</field>
+   		</record>
+   		 
+   		<record model="ir.ui.view" id="alia_account_move_periods_check_view">
+    		<field name="name">alia.account.move.periods.check.view</field>
+    		<field name="model">alia.account.move.check.wizard</field>
+    		<field name="type">form</field>
+    		<field name="arch" type="xml">
+      			<form string="Account Move Periods Check Results">
+      				<group>
+          				<field name="results" widget="one2many" height="450" nolabel="1">
+          					<tree create="false" delete="false" editable="false">
+          						<field name="account_move_id"/>
+          					</tree>
+          				</field>                
+          			</group>
+      			</form>
+    		</field>
+   		</record>		
+	 		 
+	</data>
+</openerp>

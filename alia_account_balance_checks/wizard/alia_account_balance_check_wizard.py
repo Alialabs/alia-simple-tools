@@ -72,22 +72,14 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
     number_aml_account_move_filter = fields.Integer('Number of account move lines using account move filter')
     number_aml_account_move_line_filter = fields.Integer('Number of account move lines using account move line filter')
     results = fields.One2many('alia.account.check.result','wizard_check_id')
+        
     
-     
+    
     @api.multi
-    @api.depends('number_account_move_filtered','number_aml_account_move_filter','number_aml_account_move_line_filter','init_date','end_date','draft_omit','results')
-    def check_accounts_balance(self):
-        _logger.info("Check Account Balances...")
-        model_obj = self.env['ir.model.data']
-        data_id = model_obj._get_id('alia_account_balance_checks', 'alia_account_balance_check_results_view')
-        view_id = model_obj.browse(data_id).res_id
-        
+    @api.depends('init_date','end_date','draft_omit','special_account_move_omit','results')
+    def _get_account_moves_and_lines(self):
+        _logger.info("Get the account moves and account move lines...")
         criteria = []
-        results_am = {}
-        results_aml = {}
-        self.number_aml_account_move_filter = 0
-        self.number_aml_account_move_line_filter = 0
-        
         criteria.append(('date','>=',self.init_date))
         criteria.append(('date','<=',self.end_date))
         if self.draft_omit:
@@ -99,6 +91,23 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
         
         account_moves = self.env['account.move'].search(criteria)
         account_move_lines = self.env['account.move.line'].search(criteria)
+        return account_moves, account_move_lines
+    
+     
+    @api.multi
+    @api.depends('number_account_move_filtered','number_aml_account_move_filter','number_aml_account_move_line_filter','init_date','end_date','draft_omit','results')
+    def check_accounts_balance(self):
+        _logger.info("Check Account Balances...")
+        model_obj = self.env['ir.model.data']
+        data_id = model_obj._get_id('alia_account_balance_checks', 'alia_account_balance_check_results_view')
+        view_id = model_obj.browse(data_id).res_id
+        
+        results_am = {}
+        results_aml = {}
+        self.number_aml_account_move_filter = 0
+        self.number_aml_account_move_line_filter = 0
+        
+        account_moves, account_move_lines =  self._get_account_moves_and_lines()
         
         self.number_account_move_filtered = len(account_moves)
         for am in account_moves:
@@ -116,7 +125,6 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
             else:
                 results_aml[str(aml.account_id.code)] = aml.debit - aml.credit
         
-
         balance_check_vals = {}  
         
         items = results_am.items()
@@ -147,17 +155,6 @@ class AliaAccountBalanceCheckWizard(models.TransientModel):
             'view_type':'form',
             'views':[(view_id,'form')],
             'target':'new',
-        } 
-    
-    
-    @api.multi
-    @api.depends('init_date','end_date')
-    def check_account_moves_date_integrity(self):
-        _logger.info("Check Account Moves Integrity...")
-        pass
-    
-
-
-
+        }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

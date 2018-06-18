@@ -1,0 +1,127 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* alia_account_move_check
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-18 12:07+0000\n"
+"PO-Revision-Date: 2018-06-18 12:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alia_account_move_check
+#: view:alia.account.move.check.wizard:alia_account_move_check.alia_account_move_periods_check_view
+msgid "Account Move Periods Check Results"
+msgstr "Resultados de la comprobación de periodos de asientos"
+
+#. module: alia_account_move_check
+#: code:addons/alia_account_move_check/wizard/alia_account_move_check_wizard.py:113
+#: model:ir.actions.act_window,name:alia_account_move_check.action_alia_account_move_period_check
+#: model:ir.ui.menu,name:alia_account_move_check.alia_account_move_check
+#, python-format
+msgid "Account Move Periods Checks"
+msgstr "Comprobaciones de periodos en asientos"
+
+#. module: alia_account_move_check
+#: view:alia.account.move.check.wizard:alia_account_move_check.alia_account_move_check_wizard_view
+msgid "Account balance check wizard"
+msgstr "Asistente para la comprobación de asientos"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,account_move_id:0
+msgid "Account move id"
+msgstr "Identificador del asiento"
+
+#. module: alia_account_move_check
+#: view:alia.account.move.check.wizard:alia_account_move_check.alia_account_move_check_wizard_view
+msgid "Check Account Move Periods"
+msgstr "Comprobar Periodos"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,create_uid:0
+#: field:alia.account.move.check.wizard,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,create_date:0
+#: field:alia.account.move.check.wizard,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: alia_account_move_check
+#: view:alia.account.move.check.wizard:alia_account_move_check.alia_account_move_check_wizard_view
+msgid "Date filter"
+msgstr "Filtro de fechas"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,display_name:0
+#: field:alia.account.move.check.wizard,display_name:0
+msgid "Display Name"
+msgstr "Mostrar nombre"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.wizard,end_date:0
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#. module: alia_account_move_check
+#: view:alia.account.move.check.wizard:alia_account_move_check.alia_account_move_check_wizard_view
+msgid "Filtering options"
+msgstr "Opciones de filtrado"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,id:0
+#: field:alia.account.move.check.wizard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.wizard,init_date:0
+msgid "Init date"
+msgstr "Fecha de inicio"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,__last_update:0
+#: field:alia.account.move.check.wizard,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,write_uid:0
+#: field:alia.account.move.check.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,write_date:0
+#: field:alia.account.move.check.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.wizard,draft_omit:0
+msgid "Omit Drafts"
+msgstr "Omitir Borradores"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.wizard,special_account_move_omit:0
+msgid "Omit Special Account Moves (Opening, Closing)"
+msgstr "Omitir Asientos Especiales (Apertura, Cierre)"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.wizard,results:0
+msgid "Results"
+msgstr "Resultados"
+
+#. module: alia_account_move_check
+#: field:alia.account.move.check.result,wizard_check_id:0
+msgid "Wizard check id"
+msgstr "Identificador del asistente"
+

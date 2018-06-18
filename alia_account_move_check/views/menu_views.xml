@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		
+		<act_window
+        id="action_alia_account_move_period_check"
+        name="Account Move Periods Checks"
+        res_model="alia.account.move.check.wizard"
+        view_id="alia_account_move_check_wizard_view"
+        target="new"
+        groups="base.group_system" />
+		
+		<menuitem 
+			id="alia_account_move_check" 
+			parent="alia_simple_tools_base.menu_alia_account_tools" 
+			name="Account Move Periods Checks" 
+			groups="alia_simple_tools_base.alia_simple_tools_group" 
+			sequence="10" 
+			action="action_alia_account_move_period_check"/>
+		
+	
+	</data>
+</openerp>

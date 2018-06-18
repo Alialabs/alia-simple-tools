@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* alia_account_balance_checks
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-18 12:17+0000\n"
+"PO-Revision-Date: 2018-06-18 12:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alia_account_balance_checks
+#: view:alia.account.balance.check.wizard:alia_account_balance_checks.alia_account_balance_check_results_view
+msgid "Account Balance Check Results"
+msgstr "Resultados de la comprobación de balances de cuentas"
+
+#. module: alia_account_balance_checks
+#: view:alia.account.balance.check.wizard:alia_account_balance_checks.alia_account_balance_check_wizard_view
+msgid "Account Balance Check Wizard"
+msgstr "Asistente de comprobación de balances de cuentas"
+
+#. module: alia_account_balance_checks
+#: code:addons/alia_account_balance_checks/wizard/alia_account_balance_check_wizard.py:150
+#, python-format
+msgid "Account Balance Checks"
+msgstr "Comprobación del balance de cuentas"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.check.result,account_balance_difference:0
+msgid "Account Balance Difference"
+msgstr "Diferencia entre Balances"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.check.result,account_balance_by_account_move_filter:0
+msgid "Account Balance by Account Move Filter"
+msgstr "Balance filtrando asientos"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.check.result,account_balance_by_account_move_line_filter:0
+msgid "Account Balance by Account Move Line Filter"
+msgstr "Balance filtrando apuntes contables"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.check.result,account_code:0
+msgid "Account code"
+msgstr "Código de la cuenta"
+
+#. module: alia_account_balance_checks
+#: model:ir.actions.act_window,name:alia_account_balance_checks.action_alia_account_balance_check
+#: model:ir.ui.menu,name:alia_account_balance_checks.alia_account_tools_balance_check
+msgid "Accounting Balance Checks"
+msgstr "Comprobar Balances"
+
+#. module: alia_account_balance_checks
+#: view:alia.account.balance.check.wizard:alia_account_balance_checks.alia_account_balance_check_wizard_view
+msgid "Check Account Balance"
+msgstr "Comprobar balance de cuentas"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,create_uid:0
+#: field:alia.account.check.result,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,create_date:0
+#: field:alia.account.check.result,create_date:0
+msgid "Created on"
+msgstr "Creado on"
+
+#. module: alia_account_balance_checks
+#: view:alia.account.balance.check.wizard:alia_account_balance_checks.alia_account_balance_check_wizard_view
+msgid "Date filter"
+msgstr "Filtrado de fechas"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,display_name:0
+#: field:alia.account.check.result,display_name:0
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,end_date:0
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#. module: alia_account_balance_checks
+#: view:alia.account.balance.check.wizard:alia_account_balance_checks.alia_account_balance_check_wizard_view
+msgid "Filtering options"
+msgstr "Opciones de filtrado"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,id:0
+#: field:alia.account.check.result,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,init_date:0
+msgid "Init date"
+msgstr "Fecha de inicio"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,__last_update:0
+#: field:alia.account.check.result,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,write_uid:0
+#: field:alia.account.check.result,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,write_date:0
+#: field:alia.account.check.result,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,number_account_move_filtered:0
+msgid "Number of account move filtered"
+msgstr "Número de asientos filtrados"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,number_aml_account_move_filter:0
+msgid "Number of account move lines using account move filter"
+msgstr "Numero de apuntes utilizando filtro por asientos"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,number_aml_account_move_line_filter:0
+msgid "Number of account move lines using account move line filter"
+msgstr "Número de apuntes utilizando filtro por apuntes"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,draft_omit:0
+msgid "Omit Drafts"
+msgstr "Omitir borrador"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,special_account_move_omit:0
+msgid "Omit Special Account Moves (Opening, Closing)"
+msgstr "Omitir asientos especiales (Apertura, Cierre)"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,results:0
+msgid "Results"
+msgstr "Resultados"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.balance.check.wizard,show_accounts_with_differences:0
+msgid "Show Only Accounts with differences"
+msgstr "Mostrar solo cuentas con diferencia de saldos"
+
+#. module: alia_account_balance_checks
+#: field:alia.account.check.result,wizard_check_id:0
+msgid "Wizard check id"
+msgstr "Wizard check id"
+

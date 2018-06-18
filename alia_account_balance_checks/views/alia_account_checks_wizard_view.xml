@@ -8,7 +8,7 @@
     		<field name="model">alia.account.balance.check.wizard</field>
     		<field name="type">form</field>
     		<field name="arch" type="xml">
-      			<form string="Account balance check wizard">
+      			<form string="Account Balance Check Wizard">
       			    <label string="" colspan="4"/>
                     <newline/>
       				<group colspan="4">
@@ -35,7 +35,7 @@
     		<field name="model">alia.account.balance.check.wizard</field>
     		<field name="type">form</field>
     		<field name="arch" type="xml">
-      			<form string="Account balance check results">
+      			<form string="Account Balance Check Results">
       			     <group>
       			     	<field name="number_account_move_filtered" readonly="True"/>
           				<field name="number_aml_account_move_filter" readonly="True"/>
